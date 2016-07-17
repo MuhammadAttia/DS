@@ -1,51 +1,46 @@
 #include <iostream>
 using namespace std;
-
 struct linkedlist
 {
     int data;
     linkedlist* next;
 };
 linkedlist* head;
-void insrt (int x)
+
+void Insert (int x )
 {
-    linkedlist* current=new linkedlist ();
+    linkedlist* current = new linkedlist ();
     current->data=x;
     head=current->next;
     head=current;
 }
-void print()
+void print ()
 {
-    linkedlist *temp =head;
-    if(head ==NULL)
+    linkedlist* current = head;
+    if(head==NULL)
     {
-        cout<<" The list is empty " ;
+        cout <<"this list is empty :";
     }
     else
     {
-        while (temp != NULL)
+        while (head!=NULL)
         {
-            cout<<temp->data<<"->";
-            temp = temp->next;
+            cout<<current->data<<"->";
+            head=current->next;
         }
     }
 }
 
-
-int main()
+int main ()
 {
     int n,x;
-    print();
-    cout<<" enter th num of element : ";
+    cout<<"Enter the num of value yo want insert in linkedlist : ";
     cin>>n;
-    cout<<" Enter value : ";
+    cout<<"Enter the value : ";
     for(int i=0; i<n; i++)
     {
-
         cin>>x;
-        insrt(x);
+        Insert(x);
         print();
     }
-
-
 }
